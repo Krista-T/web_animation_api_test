@@ -3,24 +3,25 @@ body {
   background: #110101;
   overflow: hidden;
 }
+.robots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-#robotRight {
-  position: absolute;
+.robots img {
   max-width: 15%;
 }
 
-#robotLeft {
-  position: absolute;
-  max-width: 15.15%;
-  margin-top: 0.2%;
+.btn {
+  text-align: center;
 }
 
-.btn button {
-  position: absolute;
-  top: 85%;
-  left: 45%;
+button {
   text-transform: uppercase;
+  background-color: rgb(203, 213, 221);
   padding: 15px 5px;
+  border: none;
   border-radius: 25px;
 }
 
@@ -31,4 +32,8 @@ body {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
   -o-transform: scale(1.2);
+}
+
+.hide {
+  display: none;
 }
