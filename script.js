@@ -13,18 +13,13 @@ function loadSVG() {
     .then((response) => response.text())
     .then((svgData) => {
       console.log("svgData");
-
-      // put the SVG into the DOM
       document.querySelector("#hand").innerHTML = svgData;
-
-      // TODO: Start the animation
       runAnimation();
     });
 }
 
-let car = null;
-let curve = null;
-let currentPosition;
+let hand = null;
+let pathLine = null;
 
 function runAnimation() {
   console.log("animate");
@@ -43,19 +38,12 @@ const robotAnimate = {
 
 const robotAnimateReverse = {
   delay: 800,
-  duration: 4500,
+  duration: 2000,
   iterations: 1,
   fill: "forwards",
   easing: "ease-in-out",
   direction: "reverse",
 };
-
-// const btnAnimation = {
-//   duration: 1000,
-//   iterations: 1,
-//   fill: "forwards",
-//   easing: "ease-in-out",
-// }
 
 //keyframes
 const keyFramesRight = [
@@ -68,20 +56,17 @@ const keyFramesLeft = [
   { transform: "translateX(0vw)" },
 ];
 
-// const keyFramesBtn = [
-//   { transform: "translateY(30vw)" },
-//   { transform: "translateY(0vw)" },
-//   {opacity: 80%},
-// ];
-
 document.querySelector(".btn button").addEventListener("click", startAnimation);
 
 function startAnimation() {
+  document.querySelector("button").classList.add("hide");
+  document.querySelector("#hand").classList.add("hide");
   robotRight.classList.remove("hide");
   robotLeft.classList.remove("hide");
 
   const rightAnimation = robotRight.animate(keyFramesRight, robotAnimate);
   const leftAnimation = robotLeft.animate(keyFramesLeft, robotAnimate);
+
   //pause and start reverse
   rightAnimation.onfinish = () => {
     startReverse();
