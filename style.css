@@ -1,7 +1,6 @@
 body {
   height: 100%;
   background: #110101;
-  overflow: hidden;
 }
 .robots {
   display: flex;
@@ -15,6 +14,7 @@ body {
 
 .btn {
   text-align: center;
+  margin-top: 25vw;
 }
 
 button {
@@ -32,6 +32,25 @@ button {
   -moz-transform: scale(1.2);
   -ms-transform: scale(1.2);
   -o-transform: scale(1.2);
+}
+
+#hand {
+  max-width: 5%;
+}
+#hand {
+  transform-box: fill-box;
+  transform-origin: center;
+  offset-path: path(
+    "M379,620c19.23,1.08,64.2,1,110-26,3.79-2.23,89.54-54.25,91-132,1.39-74.2-75.32-101-64-154,9.73-45.54,75.26-67,127-84,48.73-16,93.48-22.13,281-19,153.35,2.56,177.69,7.59,202,15,88.5,27,82.44,56.91,160,79,120.5,34.32,177.32-25.9,246,23,55.58,39.57,63.08,110.84,64,121,6.48,71.66-36.53,124.69-87,185-71,84.86-150.66,180-243,165-83.79-13.66-140.34-111.93-168-160-13-22.52-8.56-60.29-37-83-20.84-16.65-46.74-19.43-66-19"
+  );
+  animation: pathLine 10s linear forwards;
+  -webkit-animation: pathLine 10s linear forwards;
+}
+
+@keyframes pathLine {
+  100% {
+    offset-distance: 100%;
+  }
 }
 
 .hide {
